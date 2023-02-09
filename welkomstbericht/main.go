@@ -10,15 +10,15 @@ func main() {
 	currentTime := time.Now()
 	hour := currentTime.Hour()
 
-	var groet string
+	var groete string
 	if hour >= 7 && hour < 12 {
-		groet = "Goedemorgen"
+		groete = "Goedemorgen"
 	} else if hour >= 12 && hour < 18 {
-		groet = "Goedemiddag"
+		groete = "Goedemiddag"
 	} else if hour >= 18 && hour < 23 {
-		groet = "Goedenavond"
+		groete = "Goedenavond"
 	} else {
-		groet = "Sorry, de parkeerplaats is 's nachts gesloten"
+		groete = "Sorry, de parkeerplaats is 's nachts gesloten"
 	}
-	fmt.Println(groet + "! Welkom bij Fonteyn Vakantieparken")
+	fmt.Println(groete + "! Welkom bij Fonteyn Vakantieparken")
 }
