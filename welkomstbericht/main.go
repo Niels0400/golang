@@ -6,19 +6,36 @@ import (
 )
 
 func main() {
+	// Hardcoded reeks van kentekens
+	allowedPlates := []string{"Kentteken1", "Kentteken2", "Kentteken3"}
 
+	// Huidige tijd
 	currentTime := time.Now()
-	hour := currentTime.Hour()
 
-	var groete string
-	if hour >= 7 && hour < 12 {
-		groete = "Goedemorgen"
-	} else if hour >= 12 && hour < 18 {
-		groete = "Goedemiddag"
-	} else if hour >= 18 && hour < 23 {
-		groete = "Goedenavond"
-	} else {
-		groete = "Sorry, de parkeerplaats is 's nachts gesloten"
+	// Kenteken opvragen
+	var kenteken string
+	fmt.Print("Voer je kenteken in: ")
+	fmt.Scanln(&kenteken)
+
+	// Controleren of het kenteken in de reeks voorkomt
+	plateAllowed := false
+	for _, p := range allowedPlates {
+		if kenteken == p {
+			plateAllowed = true
+			break
+		}
 	}
-	fmt.Println(groete + "! Welkom bij Fonteyn Vakantieparken")
+
+	// Bericht afhankelijk van kenteken en tijd
+	if !plateAllowed {
+		fmt.Println("U heeft helaas geen toegang tot het parkeerterrein")
+	} else if currentTime.Hour() >= 7 && currentTime.Hour() < 12 {
+		fmt.Println("Goedemorgen! Welkom bij Fonteyn Vakantieparken")
+	} else if currentTime.Hour() >= 12 && currentTime.Hour() < 18 {
+		fmt.Println("Goedemiddag! Welkom bij Fonteyn Vakantieparken")
+	} else if currentTime.Hour() >= 18 && currentTime.Hour() < 23 {
+		fmt.Println("Goedenavond! Welkom bij Fonteyn Vakantieparken")
+	} else {
+		fmt.Println("Sorry, de parkeerplaats is 's nachts gesloten")
+	}
 }
