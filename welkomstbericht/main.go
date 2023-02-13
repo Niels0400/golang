@@ -7,14 +7,14 @@ import (
 
 func main() {
 	// Hardcoded reeks van kentekens
-	allowedPlates := []string{"Kentteken1", "Kentteken2", "Kentteken3"}
+	allowedPlates := [5]string{"Kenteken1", "Kenteken2", "Kenteken3", "Kenteken4", "Kenteken5"}
 
 	// Huidige tijd
 	currentTime := time.Now()
 
 	// Kenteken opvragen
 	var kenteken string
-	fmt.Print("Voer je kenteken in: ")
+	fmt.Print("Voer jou kenteken in: ")
 	fmt.Scanln(&kenteken)
 
 	// Controleren of het kenteken in de reeks voorkomt
