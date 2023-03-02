@@ -19,8 +19,8 @@ func main() {
 
 	// Controleren of het kenteken in de reeks voorkomt
 	plateAllowed := false
-	for _, p := range allowedPlates {
-		if kenteken == p {
+	for _, k := range allowedPlates {
+		if kenteken == k {
 			plateAllowed = true
 			break
 		}
